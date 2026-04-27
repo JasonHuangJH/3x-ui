@@ -1,4 +1,4 @@
-name: 3x-ui 全量镜像同步
+name: 3x-ui 镜像备份
 
 on:
   schedule:

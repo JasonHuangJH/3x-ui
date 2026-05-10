@@ -6,7 +6,6 @@ import (
 	"bytes"
 	"errors"
 	"io"
-	"io/fs"
 	"log"
 	"os"
 	"path"
@@ -89,11 +88,17 @@ func runSeeders(isUsersEmpty bool) error {
 		return db.Create(hashSeeder).Error
 	} else {
 		var seedersHistory []string
-		db.Model(&model.HistoryOfSeeders{}).Pluck("seeder_name", &seedersHistory)
+		if err := db.Model(&model.HistoryOfSeeders{}).Pluck("seeder_name", &seedersHistory).Error; err != nil {
+			log.Printf("Error fetching seeder history: %v", err)
+			return err
+		}
 
 		if !slices.Contains(seedersHistory, "UserPasswordHash") && !isUsersEmpty {
 			var users []model.User
-			db.Find(&users)
+			if err := db.Find(&users).Error; err != nil {
+				log.Printf("Error fetching users for password migration: %v", err)
+				return err
+			}
 
 			for _, user := range users {
 				hashedPassword, err := crypto.HashPasswordAsBcrypt(user.Password)
@@ -101,7 +106,10 @@ func runSeeders(isUsersEmpty bool) error {
 					log.Printf("Error hashing password for user '%s': %v", user.Username, err)
 					return err
 				}
-				db.Model(&user).Update("password", hashedPassword)
+				if err := db.Model(&user).Update("password", hashedPassword).Error; err != nil {
+					log.Printf("Error updating password for user '%s': %v", user.Username, err)
+					return err
+				}
 			}
 
 			hashSeeder := &model.HistoryOfSeeders{
@@ -124,7 +132,7 @@ func isTableEmpty(tableName string) (bool, error) {
 // InitDB sets up the database connection, migrates models, and runs seeders.
 func InitDB(dbPath string) error {
 	dir := path.Dir(dbPath)
-	err := os.MkdirAll(dir, fs.ModePerm)
+	err := os.MkdirAll(dir, 0755)
 	if err != nil {
 		return err
 	}

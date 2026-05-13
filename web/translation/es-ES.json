@@ -547,6 +547,8 @@
       "subEncryptDesc": "Encriptar las configuraciones devueltas en la suscripción.",
       "subShowInfo": "Mostrar información de uso",
       "subShowInfoDesc": "Mostrar tráfico restante y fecha después del nombre de configuración.",
+      "subEmailInRemark": "Incluir Email en el nombre",
+      "subEmailInRemarkDesc": "Incluir el correo del cliente en el nombre del perfil de suscripción.",
       "subURI": "URI de proxy inverso",
       "externalTrafficInformEnable": "Informe de tráfico externo",
       "externalTrafficInformEnableDesc": "Informar a la API externa sobre cada actualización de tráfico.",
@@ -589,7 +591,15 @@
         "twoFactorModalChangeCredentialsStep": "Ingrese el código de la aplicación para cambiar las credenciales del administrador.",
         "twoFactorModalSetSuccess": "La autenticación de dos factores se ha establecido con éxito",
         "twoFactorModalDeleteSuccess": "La autenticación de dos factores se ha eliminado con éxito",
-        "twoFactorModalError": "Código incorrecto"
+        "twoFactorModalError": "Código incorrecto",
+        "show": "Mostrar",
+        "hide": "Ocultar",
+        "apiTokenNew": "Nuevo token",
+        "apiTokenName": "Nombre",
+        "apiTokenNamePlaceholder": "por ejemplo central-panel-a",
+        "apiTokenNameRequired": "El nombre es obligatorio",
+        "apiTokenEmpty": "Aún no hay tokens — crea uno para autenticar bots o paneles remotos.",
+        "apiTokenDeleteWarning": "Cualquier cliente que use este token dejará de autenticarse inmediatamente."
       },
       "toasts": {
         "modifySettings": "Los parámetros han sido modificados.",

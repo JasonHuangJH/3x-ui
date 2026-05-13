@@ -547,6 +547,8 @@
       "subEncryptDesc": "Повернений вміст послуги підписки матиме кодування Base64.",
       "subShowInfo": "Показати інформацію про використання",
       "subShowInfoDesc": "Залишок трафіку та дата відображатимуться в клієнтських програмах.",
+      "subEmailInRemark": "Включати Email до назви",
+      "subEmailInRemarkDesc": "Включати email клієнта до назви профілю підписки.",
       "subURI": "URI зворотного проксі",
       "subURIDesc": "URI до URL-адреси підписки для використання за проксі.",
       "externalTrafficInformEnable": "Інформація про зовнішній трафік",
@@ -589,7 +591,15 @@
         "twoFactorModalChangeCredentialsStep": "Введіть код з додатку, щоб змінити облікові дані адміністратора.",
         "twoFactorModalSetSuccess": "Двофакторна аутентифікація була успішно встановлена",
         "twoFactorModalDeleteSuccess": "Двофакторна аутентифікація була успішно видалена",
-        "twoFactorModalError": "Невірний код"
+        "twoFactorModalError": "Невірний код",
+        "show": "Показати",
+        "hide": "Сховати",
+        "apiTokenNew": "Новий токен",
+        "apiTokenName": "Назва",
+        "apiTokenNamePlaceholder": "наприклад, central-panel-a",
+        "apiTokenNameRequired": "Назва обов'язкова",
+        "apiTokenEmpty": "Поки немає токенів — створіть один для автентифікації ботів або віддалених панелей.",
+        "apiTokenDeleteWarning": "Будь-який клієнт, що використовує цей токен, негайно втратить автентифікацію."
       },
       "toasts": {
         "modifySettings": "Параметри було змінено.",

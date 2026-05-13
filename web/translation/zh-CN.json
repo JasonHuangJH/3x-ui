@@ -547,6 +547,8 @@
       "subEncryptDesc": "订阅服务返回的内容将采用 Base64 编码",
       "subShowInfo": "显示使用信息",
       "subShowInfoDesc": "客户端应用中将显示剩余流量和日期信息",
+      "subEmailInRemark": "在名称中包含邮箱",
+      "subEmailInRemarkDesc": "在订阅配置名称中包含客户端邮箱。",
       "subURI": "反向代理 URI",
       "subURIDesc": "用于代理后面的订阅 URL 的 URI 路径",
       "externalTrafficInformEnable": "外部交通通知",
@@ -589,7 +591,15 @@
         "twoFactorModalChangeCredentialsStep": "输入应用程序中的代码以更改管理员凭据。",
         "twoFactorModalSetSuccess": "双因素认证已成功建立",
         "twoFactorModalDeleteSuccess": "双因素认证已成功删除",
-        "twoFactorModalError": "验证码错误"
+        "twoFactorModalError": "验证码错误",
+        "show": "显示",
+        "hide": "隐藏",
+        "apiTokenNew": "新建令牌",
+        "apiTokenName": "名称",
+        "apiTokenNamePlaceholder": "例如 central-panel-a",
+        "apiTokenNameRequired": "名称必填",
+        "apiTokenEmpty": "暂无令牌 — 创建一个用于认证机器人或远程面板。",
+        "apiTokenDeleteWarning": "使用此令牌的任何调用方将立即无法认证。"
       },
       "toasts": {
         "modifySettings": "参数已更改。",

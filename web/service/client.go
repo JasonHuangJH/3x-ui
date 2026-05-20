@@ -47,6 +47,10 @@ func (c ClientWithAttachments) MarshalJSON() ([]byte, error) {
 	if len(rec) < 2 || rec[len(rec)-1] != '}' || len(extra) <= 2 {
 		return rec, nil
 	}
+	const maxMarshalSize = 256 << 20
+	if len(rec) > maxMarshalSize || len(extra) > maxMarshalSize {
+		return rec, nil
+	}
 	out := make([]byte, 0, len(rec)+len(extra))
 	out = append(out, rec[:len(rec)-1]...)
 	if len(rec) > 2 {
